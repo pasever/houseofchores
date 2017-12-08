@@ -1,17 +1,17 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const app = express();
 const path = require('path');
-const PORT = process.env.PORT || 9000;
+const exphbs = require("express-handlebars");
 const orm = require("./config/orm.js");
+const app = express();
+const PORT = process.env.PORT || 8000;
 
 
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-
-
-
-
-
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 
 
@@ -21,5 +21,5 @@ const orm = require("./config/orm.js");
 
 
 app.listen(PORT, function() {
-  console.log("Friends listening on PORT: " + PORT);
+  console.log("House is live on PORT: " + PORT);
 });
