@@ -15,8 +15,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 
-require("./controllers/apiRoutes.js")(app);
+
 require("./controllers/routes.js")(app);
+
 
 app.listen(PORT, function() {
   console.log("House is live on PORT: " + PORT);
