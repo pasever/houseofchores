@@ -3,7 +3,7 @@ var mysql = require("mysql");
 var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "glpMySQL2017",
+    password: "root",
     database: "chores_db"
 });
 
