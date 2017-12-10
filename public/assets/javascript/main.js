@@ -98,172 +98,39 @@ var data = [{
   age: 23,
   education: 'High School Of Cambridge',
   knownledge: 'C/C++ Unix'
-}, {
-  id: 11,
-  name: 'Jack',
-  surname: 'Richardson',
-  position: 'Ruby Developer',
-  email: 'jack.richardson@gmail.com',
-  company: 'Europe IT',
-  age: 24,
-  education: 'High School Of Cambridge',
-  knownledge: 'Ruby'
-}, {
-  id: 12,
-  name: 'Alex',
-  surname: 'Howard',
-  position: 'CSS3/HTML5 Developer',
-  email: 'alex.howard@gmail.com',
-  company: 'Cisco',
-  age: 27,
-  education: 'High School Of Cambridge',
-  knownledge: 'CSS3/HTML5'
-}, {
-  id: 13,
-  name: 'Carlos',
-  surname: 'Wood',
-  position: 'Node.js Developer',
-  email: 'carlos.wood@gmail.com',
-  company: 'HP',
-  age: 36,
-  education: 'High School Of Cambridge',
-  knownledge: 'Node.js'
-}, {
-  id: 14,
-  name: 'Adrian',
-  surname: 'Russell',
-  position: 'Frontend Developer',
-  email: 'adrian.russell@gmail.com',
-  company: 'Micro Systems',
-  age: 31,
-  education: 'High School Of Cambridge',
-  knownledge: 'HTML, JavaScript'
-}, {
-  id: 15,
-  name: 'Jeremy',
-  surname: 'Hamilton',
-  position: 'Scala Developer',
-  email: 'jeremy.hamilton@gmail.com',
-  company: 'Big Machines',
-  age: 30,
-  education: 'High School Of Cambridge',
-  knownledge: 'Scala'
-}, {
-  id: 16,
-  name: 'Ivan',
-  surname: 'Woods',
-  position: 'Objective C Developer',
-  email: 'ivan.woods@gmail.com',
-  company: '',
-  age: 24,
-  education: 'High School Of Cambridge',
-  knownledge: 'Objective C'
-}, {
-  id: 17,
-  name: 'Peter',
-  surname: 'West',
-  position: 'PHP/HTML Developer',
-  email: 'peters.west@gmail.com',
-  company: 'Adobe',
-  age: 26,
-  education: 'High School Of Cambridge',
-  knownledge: 'PHP/HTML'
-}, {
-  id: 18,
-  name: 'Scott',
-  surname: 'Simpson',
-  position: 'Designer',
-  email: 'scott.simpson@gmail.com',
-  company: 'IBM',
-  age: 29,
-  education: 'High School Of Cambridge',
-  knownledge: 'Adobe PhotoShop'
-}, {
-  id: 19,
-  name: 'Lorenzo',
-  surname: 'Tucker',
-  position: 'Architect',
-  email: 'lorenzo.tucker@gmail.com',
-  company: 'Intel',
-  age: 29,
-  education: 'High School Of Cambridge',
-  knownledge: ''
-}, {
-  id: 20,
-  name: 'Randy',
-  surname: 'Grant',
-  position: 'Engineer',
-  email: 'randy.grant@gmail.com',
-  company: 'Bridges',
-  age: 30,
-  education: 'High School Of Cambridge',
-  knownledge: ''
-}, {
-  id: 21,
-  name: 'Arthur',
-  surname: 'Gardner',
-  position: 'Analytic',
-  email: 'arthur.gardner@gmail.com',
-  company: 'Google',
-  age: 31,
-  education: 'High School Of Cambridge',
-  knownledge: ''
-}, {
-  id: 22,
-  name: 'Orlando',
-  surname: 'Ruiz',
-  position: 'Unit Testing Developer',
-  email: 'orlando.ruiz@gmail.com',
-  company: 'Apple',
-  age: 32,
-  education: 'High School Of Cambridge',
-  knownledge: ''
 }];
 
-(function() {
+$(function() {
 
 var grid = new FancyGrid({
   renderTo: 'container',
-  title: 'Selection',
-  width: 600,
+  title: 'House of ${HouseOfChores Name}',
+  width: 800,
   height: 400,
   data: data,
   selModel: 'cells',
   tbar: [{
     type: 'segbutton',
     items: [{
-      text: 'Cell',
-      toggleGroup: 'sel',
-      handler: function(b) {
-        grid.setSelModel('cell');
-      }
-    }, {
-      text: 'Cells',
-      toggleGroup: 'sel',
-      pressed: true,
-      handler: function(b) {
-        grid.setSelModel('cells');
-      }
-    }, {
-      text: 'Column',
-      toggleGroup: 'sel',
-      handler: function(b) {
-        grid.setSelModel('column');
-      }
-    }, {
-      text: 'Columns',
+      text: '1 Day',
       toggleGroup: 'sel',
       handler: function(b) {
         grid.setSelModel('columns');
       }
     }, {
-      text: 'Row',
+      text: '3 days',
       toggleGroup: 'sel',
       handler: function(b) {
         grid.setSelModel('row');
       }
     }, {
-      text: 'Rows',
+      text: '7 Days',
+      toggleGroup: 'sel',
+      handler: function(b) {
+        grid.setSelModel('rows');
+      }
+    }, {
+      text: '30 Days',
       toggleGroup: 'sel',
       handler: function(b) {
         grid.setSelModel('rows');
@@ -275,7 +142,7 @@ var grid = new FancyGrid({
     width: 100,
     sortable: true,
     resizable: true,
-	ellipsis: true
+	  ellipsis: true
   },
   columns: [{
     index: 'id',
@@ -285,7 +152,7 @@ var grid = new FancyGrid({
     type: 'number'
   }, {
     index: 'company',
-    title: 'Company'
+    title: 'User'
   }, {
     index: 'name',
     title: 'Name'
@@ -302,10 +169,10 @@ var grid = new FancyGrid({
     width: 100
   }, {
     index: 'position',
-    title: 'Position',
+    title: 'Position in the Family',
     rightLocked: true,
     width: 100
   }]
 });
 
-})();
+});
