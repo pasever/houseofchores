@@ -1,6 +1,18 @@
 body {
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
   padding-top: 5rem;
+  padding-bottom: 20px;
+  background-color: #537895;  
+  background-image: url("assets/images/whitey.png");
 }
+
+.container{
+  font-size: 1.6em;
+  height: 2000;
+}
+
 .starter-template {
   padding: 3rem 1.5rem;
   text-align: center;
@@ -12,10 +24,38 @@ body {
   position: relative;
   top: -5px;
   border-radius: 2px;
-  background-color: #E4827D;
+  background-color: #93a5cf;
   color: #FFF;
 }
 
 .action-column-remove:hover {
   background-color: #F9DDE0;
+}
+
+.photo img {
+  width: 80px;
+  max-width: none;
+  margin-top: -5px;
+  margin-left: -10px;
+}
+
+.id-column-cls .fancy-grid-cell-inner {
+  margin-top: 30px;
+  margin-left: 14px;
+  font-size: 14px;
+}
+
+.id-column-cls .fancy-grid-cell {
+  border-right: 1px solid rgb(211, 219, 225) !important;
+  background-color: rgb(240, 242, 244);
+}
+#container {
+  text-align: center; 
+  float: right;  
+}
+#footer {
+  text-align:center;
+  font-size: 16px;
+  clear:both;
+  padding-top: 2%;
 }
