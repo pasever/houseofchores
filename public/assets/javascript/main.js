@@ -1,3 +1,4 @@
+
 var data = [
   {
     id: 1,
@@ -31,7 +32,7 @@ var data = [
     company: 'Airbus',
     age: 38,
     education: 'High School Of Cambridge',
-    knownledge: ''
+    knownledge: 'Javascript'
   }, {
     id: 4,
     src: "http://fancygrid.com/images/staff/boy-3.png",
@@ -64,13 +65,13 @@ $(function() {
     renderTo: 'container',
     title: 'House of ${HouseOfChores Name}',
     width: 800,
-    height: 560,
+    height: 565,
     cellHeight: 90,
     data: data,
     selModel: 'cells',
     tbar: [
       {
-        // theme: 'dark',
+        //theme: 'dark',
         type: 'segbutton',
         items: [
           {
@@ -153,14 +154,14 @@ $(function() {
 });
 
 
-var myNodelist = document.getElementsByTagName("LI");
+var ChoresList = document.getElementsByTagName("LI");
 
-for (var i = 0; i < myNodelist.length; i++) {
+for (var i = 0; i < ChoresList.length; i++) {
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
-  myNodelist[i].appendChild(span);
+  ChoresList[i].appendChild(span);
 }
 
 // Click on a close button to hide the current list item
@@ -172,13 +173,13 @@ for (var i = 0; i < close.length; i++) {
   }
 }
 
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
+// // Add a "checked" symbol when clicking on a list item
+// var list = document.querySelector('ul');
+// list.addEventListener('click', function(ev) {
+//   if (ev.target.tagName === 'LI') {
+//     ev.target.classList.toggle('checked');
+//   }
+// }, false);
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
