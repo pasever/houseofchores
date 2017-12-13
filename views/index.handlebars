@@ -37,14 +37,30 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>Hello, House!</h1>
-    <h2>Chores balance: $45.19</h2>
+    <h2><b>Hello, House!</b></h2>
+    <!-- <h3>Chores balance: $45.19</h3> -->
+    
+    <div class="btn-group">
+      <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    DAY <span class="caret"></span>
+  </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Monday</a></li>
+        <li><a href="#">Tueday</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+      </ul>
+    </div>
+      
     <div class="btn-group">
       <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     ASSIGN <span class="caret"></span>
   </button>
       <ul class="dropdown-menu">
-        <li><a href="#">1</a></li>
+        <li><a href="#">Wash Dishes</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
       </ul>
@@ -63,7 +79,18 @@
   
     <div class="btn-group">
       <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    OTHER <span class="caret"></span>
+    ADD TASK <span class="caret"></span>
+  </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+      </ul>
+    </div>
+    
+    <div class="btn-group">
+      <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    APPROVE TASK <span class="caret"></span>
   </button>
       <ul class="dropdown-menu">
         <li><a href="#">1</a></li>
@@ -77,27 +104,8 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-3">
 
-      <div id="myDIV" class="header">
-        <h2 style="margin: 2px">Gerald</h2>
-        <!-- <input type="text" id="myInput" placeholder="Title..."> -->
-        <!-- <span onclick="newElement()" class="addBtn">Add</span> -->
-      </div>
-
-      <ul id="myUL">
-        <li class="chores">Wash Dishes</li>
-        <li>Take out Garbage</li>
-        <!-- <li class="checked">Pay bills</li> -->
-        <li>Buy Grocery</li>
-        <li>Buy eggs</li>
-        <li>Trim Hedges</li>
-        <li>Do Laundry</li>
-      </ul>
-
-    </div>
-
-    <div class="col-lg-9">
+    <div class="col-lg-12">
       <div id="container" class="right-block"></div>
     </div>
 
