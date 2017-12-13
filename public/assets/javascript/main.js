@@ -1,10 +1,20 @@
 
+$('#add-task').on('click', function() {
+  
+  let day = $('#sel1').val();
+  let task = $('#sel2').val();
+  
+  console.log('Day', day);
+  console.log('Task', task);
+  
+});
+
 var data = [
   {
     id: 1,
     src: "http://fancygrid.com/images/staff/boy-4.png",
     name: 'Ted',
-    monday: 'Do dishes',
+    monday: `$(www.google.com)`,
     tuesday: ''
     
 

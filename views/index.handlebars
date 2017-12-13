@@ -19,7 +19,7 @@
 
       <div id="navbar" class="navbar-collapse collapse">
         <form class="navbar-form navbar-right" role="form">
-          <div class="btn-group"> 
+          <div class="btn-group">
             <a class="navbar-brand dropdown-toggle dropdown" data-toggle="dropdown" href="#">Welcome, Gerald!</a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">Menu</a></li>
@@ -40,65 +40,36 @@
     <h2><b>Hello, House!</b></h2>
     <!-- <h3>Chores balance: $45.19</h3> -->
     
-    <div class="btn-group">
-      <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    DAY <span class="caret"></span>
-  </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Monday</a></li>
-        <li><a href="#">Tueday</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">6</a></li>
-        <li><a href="#">7</a></li>
-      </ul>
-    </div>
-      
-    <div class="btn-group">
-      <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    ASSIGN <span class="caret"></span>
-  </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Wash Dishes</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-      </ul>
-    </div>
-    
-    <div class="btn-group">
-      <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    REDEEM <span class="caret"></span>
-  </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-      </ul>
-    </div>
-  
-    <div class="btn-group">
-      <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    ADD TASK <span class="caret"></span>
-  </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-      </ul>
-    </div>
-    
-    <div class="btn-group">
-      <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    APPROVE TASK <span class="caret"></span>
-  </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-      </ul>
-    </div>
-  
+    <select class="selectpicker" id="sel1" style="font-size: 14px; border-radius: none">
+      <option>Pick a day</option>
+      <option value="1">Sunday</option>
+      <option value="2">Monday</option>
+      <option value="3">Tuesday</option>
+      <option value="4">Wednesday</option>
+      <option value="5">Thurday</option>
+      <option value="6">Friday</option>
+      <option value="7">Saturday</option>
+    </select>
+
+    <select class="selectpicker" id="sel2" style="font-size: 14px; border-radius: 1px">
+      <option>Pick a task</option>
+      <option value="1">Wash Dishes</option>
+      <option value="2">Vacuum</option>
+      <option value="3">Take out Garbage</option>
+      <option value="4">Clean Bathrooms</option>
+      <option value="5">Cook</option>
+      <option value="6">Buy Grocery</option>
+      <option value="7">Do Laundry</option>
+      <option value="8">Mow Lawn</option>
+      <option value="9">Trim Hedges</option>
+    </select>
+
+    <button type="button" id="add-task" style="font-size: 13px; border-radius: 7px; padding-bottom: -2px">Add </button>
+
+        <button type="button" id="add-task" style="font-size: 13px; border-radius: 7px; padding-bottom: -2px">Add a task</button>
+        <button type="button" id="add-task" style="font-size: 13px; border-radius: 7px; padding-bottom: -2px">Redeem </button>
+        <button type="button" id="add-task" style="font-size: 13px; border-radius: 7px; padding-bottom: -2px">Other </button>
+
   </div>
 </div>
 
