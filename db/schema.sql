@@ -32,8 +32,12 @@ CREATE TABLE user_chores
     task_id int,
     ranking int,
     tu_sched_id int,	
+    sched_day varchar(255) NOT NULL,
+    completedflag boolean,
     PRIMARY KEY (id)
 );
+
+
 
 
 CREATE TABLE task_user_sched
@@ -42,3 +46,13 @@ CREATE TABLE task_user_sched
     sched_day varchar(255) NOT NULL,
     PRIMARY KEY (tu_sched_id)
 );
+
+
+CREATE TABLE chore_approval
+(
+	id int NOT NULL auto_increment,
+    task_id int,
+    user_id int,
+    approval_cnt int,
+    PRIMARY KEY (id)
+);    

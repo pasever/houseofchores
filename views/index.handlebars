@@ -39,7 +39,7 @@
   <div class="container">
     <h2><b>Hello, House!</b></h2>
     <!-- <h3>Chores balance: $45.19</h3> -->
-    
+
     <select class="selectpicker" id="sel1" style="font-size: 14px; border-radius: none">
       <option>Pick a day</option>
       <option value="1">Sunday</option>
@@ -49,6 +49,7 @@
       <option value="5">Thurday</option>
       <option value="6">Friday</option>
       <option value="7">Saturday</option>
+      <option value="8">Daily</option>
     </select>
 
     <select class="selectpicker" id="sel2" style="font-size: 14px; border-radius: 1px">
@@ -66,12 +67,14 @@
 
     <button type="button" id="add-task" style="font-size: 13px; border-radius: 7px; padding-bottom: -2px">Add </button>
 
-        <button type="button" id="add-task" style="font-size: 13px; border-radius: 7px; padding-bottom: -2px">Add a task</button>
-        <button type="button" id="add-task" style="font-size: 13px; border-radius: 7px; padding-bottom: -2px">Redeem </button>
-        <button type="button" id="add-task" style="font-size: 13px; border-radius: 7px; padding-bottom: -2px">Other </button>
+    <button type="button" id="add-task" style="font-size: 13px; border-radius: 7px; padding-bottom: -2px">Add a task</button>
+    <button type="button" id="add-task" style="font-size: 13px; border-radius: 7px; padding-bottom: -2px">Redeem </button>
+    <button type="button" id="add-task" style="font-size: 13px; border-radius: 7px; padding-bottom: -2px">Other </button>
 
   </div>
 </div>
+
+
 
 <div class="container">
   <div class="row">
@@ -86,3 +89,10 @@
     </footer>
   </div>
 </div>
+
+<script>
+  let jjj = `{{#each chores}}
+{{this.taskname}}
+{{/each}}`;
+  console.log(jjj);
+</script>
