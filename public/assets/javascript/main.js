@@ -1,4 +1,4 @@
-$('#add-task').on('click', function() {
+$('#add-task').on('click', function () {
 
   let day = $('#sel1').val();
   let task = $('#sel2').val();
@@ -7,19 +7,18 @@ $('#add-task').on('click', function() {
   console.log('Task', task);
 
 });
- 
-$.ajax
-({
-  method: "GET", 
+
+$.ajax({
+  method: "GET",
   url: "/api/chores"
- }).done(function(data) {
-  console.log('data:', data);
-  var objArray = Object.keys(data);
-  var userArray = Object.keys(data).map(function(userId){
-    return data[userId];
-  });
-    
-  $(function() {
+}).done(function (data) {
+  let choreArray = [];
+  let choreObj = data['chores'];
+  for (i in choreObj) {
+    choreArray.push(choreObj[i]);
+  }
+
+  $(function () {
 
     var grid = new FancyGrid({
       theme: 'dark',
@@ -28,7 +27,7 @@ $.ajax
       width: 1150,
       height: 565,
       cellHeight: 100,
-      data: userArray,
+      data: choreArray,
       selModel: 'cells',
       defaults: {
         type: 'string',
@@ -39,8 +38,7 @@ $.ajax
       },
       columnLines: false,
       tableLines: false,
-      columns: [
-        {
+      columns: [{
           index: 'user_id',
           title: '',
           locked: true,
@@ -48,7 +46,7 @@ $.ajax
           type: 'number',
           align: 'center',
           cls: 'id-column-cls'
-        }, 
+        },
         // {
         //   type: 'image',
         //   title: 'Photo',
