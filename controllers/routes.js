@@ -1,16 +1,43 @@
 var chores = require("../models/chores.js");
 
+function distinct(chores){
+  var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  var table = {};
+  var distinctUsers = chores.map(function(chore, i, arr){
+    return chore.user_id; 
+  }).filter((user_id, i, arr) => arr.indexOf(user_id) === i); 
+
+  var justUsers = chores.map(chore => ({
+    user_id: chore.user_id, 
+    username: chore.username
+  }));
+  distinctUsers.forEach((id, i, arr) => {
+    table[id] = {};
+    var matched_user = justUsers.filter(user => user.user_id === id)[0];
+    table[id].user_id = matched_user.user_id;
+    table[id].username = matched_user.username;
+    days.forEach(day => {
+      table[id][day] = chores.filter( chore => {
+        return chore.user_id === id && chore.sched_day === day;
+      })
+    })
+  })
+  return table;   
+}
+
+
 module.exports = (app) => {
 
 
     app.get("/", (req, res) => {
         //console.log("***** Inside routes.js *******");  
         chores.all(function(data) {
+            var formattedData = distinct(data);
+            // res.json({formattedData});
+            // return;
             var hbsObject = {
-                chores: data
+                chores: formattedData
             };
-            
-            //distinct(hbsObject);
             console.log("***** Inside routes.js *******");
             console.log(hbsObject);
             res.render('index', hbsObject);
@@ -47,10 +74,3 @@ module.exports = (app) => {
     });
 }
 
-function distinct(obj){
-  
-  var table = obj.map(function(chore, i, arr){
-    return chore.user_id; 
-    console.log(chore.user_id);
-  }).filter((user_id, i, arr) => arr.indexOf(user_id) === i);      
-}
