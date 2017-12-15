@@ -9,6 +9,8 @@ module.exports = (app) => {
             var hbsObject = {
                 chores: data
             };
+            
+            //distinct(hbsObject);
             console.log("***** Inside routes.js *******");
             console.log(hbsObject);
             res.render('index', hbsObject);
@@ -43,4 +45,12 @@ module.exports = (app) => {
         //         res.render("index", hbsObject);
         //     });
     });
+}
+
+function distinct(obj){
+  
+  var table = obj.map(function(chore, i, arr){
+    return chore.user_id; 
+    console.log(chore.user_id);
+  }).filter((user_id, i, arr) => arr.indexOf(user_id) === i);      
 }
