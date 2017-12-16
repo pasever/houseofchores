@@ -8,9 +8,9 @@ $('#add-task').on('click', function() {
   let task = $('#sel2').val();
   let taskDate = $('#datepicker').val();
   let userID = 1;
-  console.log('Day', day);
-  console.log('Task', task);
-  console.log('Date', taskDate);
+  //console.log('Day', day);
+  //console.log('Task', task);
+  //console.log('Date', taskDate);
   
   $.ajax({
     method: "POST", 
@@ -22,8 +22,7 @@ $('#add-task').on('click', function() {
       userID: userID
     }
   }).done(function(data){
-    
-    //console.log(req.body);
+  
     console.log("Data sent: " + data);
   }).fail(function(error){
     console.log(error);
@@ -75,10 +74,6 @@ $.ajax({method: "GET", url: "/api/chores"}).done(function(data) {
       cellHeight: 100,
       data: choreArray,
       selModel: 'cells',
-      // data: {
-      //    items: choreArray,
-      //    fields: ['name', 'price', 'change', 'pctChange', 'lastChange']
-      //  },
       defaults: {
         type: 'string',
         width: 135,

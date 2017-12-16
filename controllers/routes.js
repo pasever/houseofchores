@@ -41,8 +41,8 @@ module.exports = (app) => {
       var formattedObj = {
         chores: formattedData
       };
-      console.log("***** Inside routes.js *******");
-      console.log(formattedObj);
+      //console.log("***** Inside routes.js *******");
+      //console.log(formattedObj);
 
       res.status(200).json(formattedObj);
 
