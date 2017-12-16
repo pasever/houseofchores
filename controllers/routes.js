@@ -82,9 +82,5 @@ module.exports = (app) => {
             console.log(hbsObject);
             res.render("index", hbsObject);
         });
-  });
-  
-  
-  
-  
+  });  
 }
