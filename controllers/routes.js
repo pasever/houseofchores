@@ -7,7 +7,7 @@ function distinct(chores) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday",
+    "Saturday", 
     "Sunday"
   ];
   var table = {};
@@ -83,4 +83,8 @@ module.exports = (app) => {
             res.render("index", hbsObject);
         });
   });
+  
+  
+  
+  
 }

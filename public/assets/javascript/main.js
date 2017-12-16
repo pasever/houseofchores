@@ -1,55 +1,65 @@
+$( function() {
+   $( "#datepicker" ).datepicker();
+ } );
+
 $('#add-task').on('click', function() {
 
   let day = $('#sel1').val();
   let task = $('#sel2').val();
-
+  let taskDate = $('#datepicker').val();
+  let userID = 1;
   console.log('Day', day);
-  //console.log('Task', task);
-
+  console.log('Task', task);
+  console.log('Date', taskDate);
+  
+  $.ajax({
+    method: "POST", 
+    url: "/api/addtask",
+    data: { 
+      day: day, 
+      task: task, 
+      taskDate: taskDate,
+      userID: userID
+    }
+  }).done(function(data){
+    
+    //console.log(req.body);
+    console.log("Data sent: " + data);
+  }).fail(function(error){
+    console.log(error);
+  });
 });
 
 $.ajax({method: "GET", url: "/api/chores"}).done(function(data) {
   let choreArray = [];
-  
-  
+
   //console.log(data);
   let choreObj = data['chores'];
   //console.log(choreObj);
-  
+
   for (i in choreObj) {
     choreArray.push(choreObj[i]);
   }
-  //console.log(choreArray);
-  //console.log(choreArray[0].Monday[0].taskname);
-  
+
   for (j in choreArray) {
-    
-    console.log(choreArray[j]);
-    
-    
-    for (a in choreArray[j]) {  
-      if (!Array.isArray(choreArray[j][a])) continue; // Skips non-arrays
+
+    //console.log(choreArray[j]);
+
+    for (a in choreArray[j]) {
+      if (!Array.isArray(choreArray[j][a])) 
+        continue; // Skips non-arrays
       
       var tasks = [];
-      
+
       choreArray[j][a].map(function(item) {
         tasks.push(item.taskname);
       });
-      
-      choreArray[j][a] = tasks.join('<br>');
-      
-      /*
-      for (b in choreArray[j][a]) {  
-        var zzz = choreArray[j][a][b]['taskname'];
-        //console.log(choreArray[j][a][b]['taskname']);
-        
-      }
-      */
-    
+
+      choreArray[j][a] = tasks.join(',<br>');
     }
 
-}
-  
+  }
+
   $(function() {
 
     var grid = new FancyGrid({
@@ -65,6 +75,10 @@ $.ajax({method: "GET", url: "/api/chores"}).done(function(data) {
       cellHeight: 100,
       data: choreArray,
       selModel: 'cells',
+      // data: {
+      //    items: choreArray,
+      //    fields: ['name', 'price', 'change', 'pctChange', 'lastChange']
+      //  },
       defaults: {
         type: 'string',
         width: 135,
