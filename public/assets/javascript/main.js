@@ -10,11 +10,36 @@ $('#add-task').on('click', function() {
 
 $.ajax({method: "GET", url: "/api/chores"}).done(function(data) {
   let choreArray = [];
+  
+  
+  //console.log(data);
   let choreObj = data['chores'];
+  //console.log(choreObj);
+  
   for (i in choreObj) {
     choreArray.push(choreObj[i]);
   }
+  //console.log(choreArray);
+  //console.log(choreArray[0].Monday[0].taskname);
+  
+  for (j in choreArray) {
+    
+    //console.log(j);
+    //console.log(choreArray[j]);
+    
+    for (a in choreArray[j]) {  
+      console.log(choreArray[j][a]);
+      
+      
+      for (b in choreArray[j][a]) {  
+        var zzz =choreArray[j][a][b]['taskname'];
+        //console.log(choreArray[j][a][b]['taskname']);
+      
+    }
+  }
 
+}
+  
   $(function() {
 
     var grid = new FancyGrid({
@@ -65,39 +90,37 @@ $.ajax({method: "GET", url: "/api/chores"}).done(function(data) {
           cls: 'id-column-cls',
           align: 'center'
         }, {
-          index: 'Monday',  
+          index: `Monday[0].taskname`,  
           title: 'Monday',
-          type: 'combo',
-          data: [],
           align: 'center',
           cellAlign: 'center'
         }, {
-          index: 'Tuesday',
+          index: 'Tuesday[0].taskname',
           title: 'Tuesday',
           align: 'center',
           cellAlign: 'center'
         }, {
-          index: 'Wednesday',
+          index: 'Wednesday[0].taskname',
           title: 'Wednesday',
           align: 'center',
           cellAlign: 'center'
         }, {
-          index: 'Thursday',
+          index: 'Thursday[0].taskname',
           title: 'Thursday',
           align: 'center',
           cellAlign: 'center'
         }, {
-          index: 'Friday',
+          index: 'Friday[0].taskname',
           title: 'Friday',
           align: 'center',
           cellAlign: 'center'
         }, {
-          index: 'Saturday',
+          index: 'Saturday[0].taskname',
           title: 'Saturday',
           align: 'center',
           cellAlign: 'center'
         }, {
-          index: 'Sunday',
+          index: 'Sunday[0].taskname',
           title: 'Sunday',
           align: 'center',
           cellAlign: 'center'
@@ -117,10 +140,10 @@ $.ajax({method: "GET", url: "/api/chores"}).done(function(data) {
 
   // var data = [
   //   {
-  //     id: 1,
+  //     user_id: 1,
   //     src: "http://fancygrid.com/images/staff/boy-4.png",
-  //     username: 'Ted',
-  //     monday: `$(www.google.com)`,
+  //     username: 'Gerald',
+  //     monday: 'vacuum',
   //     tuesday: ''
   //   }, {
   //     id: 2,
