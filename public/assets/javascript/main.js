@@ -7,7 +7,7 @@ $('#add-task').on('click', function() {
   let day = $('#sel1').val();
   let task = $('#sel2').val();
   let taskDate = $('#datepicker').val();
-  let userID = 3;
+  let userID = 1;
   //console.log('Day', day);
   //console.log('Task', task);
   //console.log('Date', taskDate);
